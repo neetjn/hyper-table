@@ -4,7 +4,9 @@
   "description": "ReactTable port for HyperMTML.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "node_modules/.bin/eslint src/**.js",
+    "pretty": ""
   },
   "repository": {
     "type": "git",
@@ -26,6 +28,7 @@
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-es2017": "^7.0.0-beta.53",
+    "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
     "eslint": "^5.10.0",
     "hyperhtml": "^2.14.0",

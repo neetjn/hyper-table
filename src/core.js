@@ -3,10 +3,9 @@ import hyperHTML from 'hyperhtml'
 export function hyperTable (selectorDOM, columns, data) {
   const el = typeof selectorDOM === 'object' ? selectorDOM : document.querySelector(selectorDOM)
   const render = hyperHTML(el)
-  let index = {}
-  columns = columns.map((column, index) => Object.assign(column, {index: index}))
+  columns = columns.map((column, index) => Object.assign(column, { index: index }))
   data = data.map(vector => {
-  	let units = []
+  	const units = []
     for (var key in vector) {
     	units.push([vector[key], columns.find(column => column.accessor === key).index])
     }

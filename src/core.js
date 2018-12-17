@@ -5,7 +5,7 @@ export function hyperTable(selectorDOM, columns, data) {
     typeof selectorDOM === 'object'
       ? selectorDOM
       : document.querySelector(selectorDOM)
-  const render = hyperHTML(el)
+  const html = hyperHTML(el)
   columns = columns.map((column, index) =>
     Object.assign(column, { index: index })
   )
@@ -22,7 +22,7 @@ export function hyperTable(selectorDOM, columns, data) {
   data.forEach((unit, index) => {
     data[index] = unit.sort((a, b) => a[1] > b[1])
   })
-  render`
+  html`
     <table>
       <thead>
         <tr>${columns.map(

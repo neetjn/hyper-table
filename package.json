@@ -27,7 +27,9 @@
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-es2017": "^7.0.0-beta.53",
     "babel-loader": "^8.0.4",
+    "eslint": "^5.10.0",
     "hyperhtml": "^2.14.0",
-    "parcel-bundler": "^1.10.3"
+    "parcel-bundler": "^1.10.3",
+    "prettier": "^1.15.3"
   }
 }

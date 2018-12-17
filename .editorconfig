@@ -1,0 +1,20 @@
+root = true
+
+# unix-style newlines with a newline ending every file
+[*]
+end_of_line = lf
+insert_final_newline = true
+
+# set default charset
+[*.{js}]
+charset = utf-8
+
+# indentation override for all JS under lib directory
+[src/**.js]
+indent_style = space
+indent_size = 2
+
+# setting formatting for general configuration files
+[{package.json,.travis.yml,.eslintrc.json}]
+indent_style = space
+indent_size = 2

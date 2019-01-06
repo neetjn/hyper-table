@@ -4,9 +4,10 @@
   "description": "ReactTable port for HyperMTML.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node_modules/.bin/parcel build src/core.js -o hyper-table.js",
     "lint": "npx eslint src/**.js",
-    "pretty": "npx prettier-eslint --write src/**.js"
+    "pretty": "npx prettier-eslint --write src/**.js",
+    "test": "npm run pretty && npm run lint && echo '...'"
   },
   "repository": {
     "type": "git",

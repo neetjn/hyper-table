@@ -1,6 +1,6 @@
 import hyperHTML from 'hyperhtml'
 
-export class hyperTable extends hyperHTML.Component {
+export class Table extends hyperHTML.Component {
   constructor(props) {
     this.props = props
     this.html = hyperHTML.wire(this)

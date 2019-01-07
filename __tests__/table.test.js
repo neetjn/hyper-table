@@ -1,7 +1,5 @@
 import hyperHTML from 'hyperhtml'
-import hyperTable from '../src'
-
-hyperHTML.define('Table', Table)
+import { Table } from '../src'
 
 describe('Table', () => {
   beforeEach(() => {
@@ -11,9 +9,31 @@ describe('Table', () => {
   })
 
   it('should be generated', () => {
+    const columns = [
+      {
+        Header: 'Name',
+        accessor: 'name'
+      },
+      {
+        Header: 'Age',
+        accessor: 'age'
+      }
+    ]
+    
+    const data = [
+      {
+        name: 'John Doe',
+        age: 23,
+      },
+      {
+        age: 26,
+        name: 'Jane Doe',
+      }
+    ]
+
     hyperHTML.bind(document.querySelector('#table'))`
     <h1>Table Test</h1>
-    ${new hyperTable({
+    ${new Table({
       columns,
       data
     })}

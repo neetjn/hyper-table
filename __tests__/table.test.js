@@ -1,10 +1,12 @@
+import 'jest-dom/extend-expect'
+
 import hyperHTML from 'hyperhtml'
 import { Table } from '../src'
 
 describe('Table', () => {
   beforeEach(() => {
     document.body.innerHTML = `
-      <div id="app">
+      <div id="table">
     `
   })
 
@@ -32,11 +34,11 @@ describe('Table', () => {
     ]
 
     hyperHTML.bind(document.querySelector('#table'))`
-    <h1>Table Test</h1>
     ${new Table({
       columns,
       data
     })}
     `
+    expect
   })
 })

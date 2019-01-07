@@ -2,6 +2,7 @@ import hyperHTML from 'hyperhtml'
 
 export class Table extends hyperHTML.Component {
   constructor(props) {
+    super()
     this.props = props
     this.html = hyperHTML.wire(this)
   }

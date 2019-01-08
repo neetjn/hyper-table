@@ -1,5 +1,5 @@
 {
-  "name": "hyper-table",
+  "name": "@neetjn/hyper-table",
   "version": "0.0.1",
   "description": "ReactTable port for HyperMTML.",
   "main": "index.js",

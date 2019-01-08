@@ -3,7 +3,7 @@
 [![npm](https://img.shields.io/npm/dm/@neetjn/hyper-table.svg)](https://www.npmjs.com/package/@neetjn/hyper-table)
 
 [![build](https://travis-ci.org/neetjn/hyper-table.svg?branch=master)](https://travis-ci.org/neetjn/hyper-table/)
-[![npm version](https://badge.fury.io/js/hyper-table.svg)](https://badge.fury.io/js/hyper-table)
+[![npm version](https://badge.fury.io/js/@neetjn/hyper-table.svg)](https://badge.fury.io/js/@neetjn/hyper-table)
 
 [![NPM](https://nodei.co/npm/@neetjn/hyper-table.png)](https://nodei.co/npm/@neetjn/hyper-table/)
 

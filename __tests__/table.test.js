@@ -21,15 +21,15 @@ describe('Table', () => {
         accessor: 'age'
       }
     ]
-    
+
     const data = [
       {
         name: 'John Doe',
-        age: 23,
+        age: 23
       },
       {
         name: 'Jane Doe',
-        age: 26,
+        age: 26
       }
     ]
 
@@ -54,9 +54,7 @@ describe('Table', () => {
       const cells = row.querySelectorAll('td')
       expect(cells.length).toEqual(2)
       Object.keys(data[index]).forEach((key, jindex) => {
-        expect(data[index][key].toString()).toEqual(
-          cells[jindex].textContent
-        )
+        expect(data[index][key].toString()).toEqual(cells[jindex].textContent)
       })
     })
   })

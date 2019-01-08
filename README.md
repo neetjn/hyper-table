@@ -10,7 +10,7 @@
 
 ### About
 
-**hyper-table** is a ReactTable port for the HyperHTML framework. Underneath...
+**hyper-table** is a [ReactTable](https://github.com/react-tools/react-table) port for the HyperHTML framework. This project is relatively simple, and simply generates tables given a structured list of columns and a vector of data.
 
 
 ### Support
@@ -19,10 +19,18 @@
 
 ### Example
 
+The **hyper-table** component consumes and expects two props:
+
+* **columns**: Structured list of columns for table, provides header information and other functional details.
+* **data**: Vector of data to be loaded in by order of defined columns.
+
 ```js
+// columns will be rendered in order
 const columns = [
   {
+    // label for table header
     Header: 'Name',
+    // alias for data vector object
     accessor: 'name'
   },
   {
@@ -31,6 +39,7 @@ const columns = [
   }
 ]
 
+// data will be rendered by order of columns
 const data = [
   {
     name: 'John Doe',
@@ -42,6 +51,7 @@ const data = [
   }
 ]
 
+// <!-- <div id="table"> -->
 hyperHTML.bind(document.querySelector('#table'))`
 <h1>User Table</h1>
 ${new Table({

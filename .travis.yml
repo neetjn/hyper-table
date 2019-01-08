@@ -9,6 +9,7 @@ cache:
     - node_modules
 script:
   - npm run test
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then codecov; fi
 deploy:
   provider: npm
   email: john@neetgroup.net

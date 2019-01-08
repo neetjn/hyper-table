@@ -4,6 +4,7 @@
 
 [![build](https://travis-ci.org/neetjn/hyper-table.svg?branch=master)](https://travis-ci.org/neetjn/hyper-table/)
 [![npm version](https://badge.fury.io/js/@neetjn/hyper-table.svg)](https://badge.fury.io/js/@neetjn/hyper-table)
+[![codecov](https://codecov.io/gh/neetjn/hyper-table/branch/master/graph/badge.svg)](https://codecov.io/gh/neetjn/hyper-table)
 
 [![NPM](https://nodei.co/npm/@neetjn/hyper-table.png)](https://nodei.co/npm/@neetjn/hyper-table/)
 

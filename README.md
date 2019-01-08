@@ -92,8 +92,6 @@ Contributing guidelines are as follows,
 * Travis will build your changes before testing and publishing, but bower pulls from this repository directly.
 * Include your name and email in the contributors list.
 
-Notes,
-
 Be sure to run prettier using:
 ```sh
 npm run pretty

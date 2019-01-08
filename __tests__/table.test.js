@@ -71,6 +71,15 @@ describe('Table', () => {
       pageSizeOptions: [],
       defaultPageSize: 20,
       showPageJump: true
-    }    
+    }
+    
+    hyperHTML.bind(document.querySelector('#table'))`
+    ${new Table({
+      columns,
+      config
+    })}
+    `
+
+    expect(document.querySelector('#table > table')).toBeDefined()
   })
 })

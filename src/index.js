@@ -8,7 +8,7 @@ export class Table extends hyperHTML.Component {
   }
   render() {
     const columns = this.props.columns.map((column, index) =>
-      Object.assign(column, { index: index })
+      Object.assign(column, { index })
     )
     const data = this.props.data.map(vector => {
       const units = []

@@ -58,4 +58,19 @@ describe('Table', () => {
       })
     })
   })
+
+  it('pagination should work', () => {
+    const columns = [{ Header: 'Number', accessor: 'number' }]
+    const data = []
+    const config = {
+      data,
+      showPagination: true,
+      showPaginationTop: false,
+      showPaginationBottom: false,
+      showPageSizeOptions: true,
+      pageSizeOptions: [],
+      defaultPageSize: 20,
+      showPageJump: true
+    }    
+  })
 })

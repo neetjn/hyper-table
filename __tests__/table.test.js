@@ -70,6 +70,7 @@ describe('Table', () => {
       showPageSizeOptions: true,
       pageSizeOptions: [],
       defaultPageSize: 20,
+      pageSize: 20,
       showPageJump: true
     }
     

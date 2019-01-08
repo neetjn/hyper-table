@@ -28,8 +28,8 @@ describe('Table', () => {
         age: 23,
       },
       {
-        age: 26,
         name: 'Jane Doe',
+        age: 26,
       }
     ]
 
@@ -39,6 +39,25 @@ describe('Table', () => {
       data
     })}
     `
-    expect
+
+    expect(document.querySelector('#table > table')).toBeDefined()
+
+    const tableHeaders = document.querySelectorAll('thead > tr > th')
+    expect(tableHeaders.length).toEqual(columns.length)
+    tableHeaders.forEach((header, index) => {
+      expect(header.textContent).toEqual(columns[index].Header)
+    })
+
+    const tableRows = document.querySelectorAll('tbody > tr')
+    expect(tableRows.length).toEqual(data.length)
+    tableRows.forEach((row, index) => {
+      const cells = row.querySelectorAll('td')
+      expect(cells.length).toEqual(2)
+      Object.keys(data[index]).forEach((key, jindex) => {
+        expect(data[index][key].toString()).toEqual(
+          cells[jindex].textContent
+        )
+      })
+    })
   })
 })

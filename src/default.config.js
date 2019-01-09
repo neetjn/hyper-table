@@ -1,10 +1,9 @@
 export default Config = {
   showPagination: true,
   showPaginationTop: false,
-  showPaginationBottom: false,
+  showPaginationBottom: true,
   showPageSizeOptions: true,
-  pageSizeOptions: [],
   defaultPageSize: 20,
-  pageSize: 20,
+  pageSize: 0,
   showPageJump: true
 }

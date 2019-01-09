@@ -1,6 +1,6 @@
 import 'jest-dom/extend-expect'
-
 import hyperHTML from 'hyperhtml'
+
 import { Table } from '../src'
 
 describe('Table', () => {

@@ -5,5 +5,5 @@ export default Config = {
   showPageSizeOptions: true,
   defaultPageSize: 20,
   pageSize: 0,
-  showPageJump: true
+  showPageJump: true,
 }

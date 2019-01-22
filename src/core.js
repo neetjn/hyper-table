@@ -17,7 +17,6 @@ class Table extends hyperHTML.Component {
   data: Array<mixed>
   events: EventEmitter
   html: hyperHTML.Wire
-  render: 
 
   constructor(props: Object) {
     super()

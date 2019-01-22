@@ -1,4 +1,7 @@
-export default {
+import TableConfig from '../flow-typed/config.def'
+
+//@flow
+DefaultConfig implements TableConfig = {
   showPagination: true,
   showPaginationTop: false,
   showPaginationBottom: true,
@@ -7,3 +10,5 @@ export default {
   pageSize: 0,
   showPageJump: true,
 }
+
+export default DefaultConfig

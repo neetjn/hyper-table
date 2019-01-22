@@ -1,4 +1,4 @@
-export default Config = {
+export default {
   showPagination: true,
   showPaginationTop: false,
   showPaginationBottom: true,

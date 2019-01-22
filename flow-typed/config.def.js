@@ -1,4 +1,4 @@
-declare type TableConfig = {
+declare interface TableConfig {
   showPagination: boolean,
   showPaginationTop: boolean,
   showPaginationBottom: boolean,

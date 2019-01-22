@@ -1,5 +1,10 @@
-import Render from './render'
+import render from './render'
+import setPage from './page'
+import update from './update'
+
 
 export default {
-  Render,
+  render,
+  setPage,
+  update,
 }

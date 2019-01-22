@@ -12,12 +12,6 @@ import {
 //@flow
 class Table extends hyperHTML.Component {
 
-  config: Object
-  columns: Array<string>
-  data: Array<mixed>
-  events: EventEmitter
-  html: hyperHTML.Wire
-
   constructor(props: Object) {
     super()
 

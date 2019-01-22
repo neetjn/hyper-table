@@ -1,9 +1,16 @@
 import hyperHTML from 'hyperhtml'
+import { TableConfig } from './config.def'
 
 declare interface TableCore extends hyperHTML.Component {
-  config: Object
-  columns: Array<string>
-  data: Array<mixed>
-  events: EventEmitter
-  html: hyperHTML.Wire
+
+  config: TableConfig,
+  columns: Array<string>,
+  data: Array<mixed>,
+  events: EventEmitter,
+  html: hyperHTML.Wire,
+
+  render(): void,
+  update(): void,
+  setPage(): void
+
 }

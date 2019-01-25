@@ -43,14 +43,14 @@ export default function() {
           <thead>
             <tr>
               ${columns.map(
-                column => hyperHTML.wire()`<th>${column.Header}</th>`
+                column => self.hyperHTML.wire()`<th>${column.Header}</th>`
               )}
             </tr>
           </thead>
           <tbody>
             ${data.map(unit => {
-              return hyperHTML.wire()`<tr>${unit.map(item => {
-                return hyperHTML.wire()`<td>${item[0]}</td>`
+              return self.hyperHTML.wire()`<tr>${unit.map(item => {
+                return self.hyperHTML.wire()`<td>${item[0]}</td>`
               })}</tr>`
             })}
           </tbody>

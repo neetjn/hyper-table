@@ -73,7 +73,7 @@ describe('Table', () => {
       pageSize: 20,
       showPageJump: true
     }
-    
+
     hyperHTML.bind(document.querySelector('#table'))`
     ${new Table({
       columns,

@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "npx eslint src/**.js flow-typed/**.js",
     "pretty": "npx prettier-eslint --write src/**.js && npx prettier-eslint --write __tests__/**.js",
-    "build": "npm run lint && npm run pretty && node_modules/.bin/parcel build src/index.js -o hyper-table.js",
+    "build": "npm run lint && npm run pretty && node_modules/.bin/parcel build src/core.js -o hyper-table.js",
     "test": "npm run lint && node_modules/.bin/jest --coverage"
   },
   "repository": {

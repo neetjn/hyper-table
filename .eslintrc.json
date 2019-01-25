@@ -24,6 +24,7 @@
   },
   "globals": {
     "document": true,
-    "window": true
+    "window": true,
+    "Promise": true
   }
 }

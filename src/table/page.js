@@ -12,12 +12,12 @@ export default function(opts) {
       else
         reject({ msg: 'Page options were not provided as expected.' })
     }
-    if (config.showPagination) {
+    if (self.config.showPagination) {
       const pageSize = self.config.pageSize || self.config.defaultPageSize
       const numPages = Math.ceil(self.data.length / pageSize)
       const currentIndex = self.page * pageSize - self.page
       self.availablePages = []
-      self.pageData = self.data.splice(, )
+      // self.pageData = self.data.splice(, )
     }
   })
 }

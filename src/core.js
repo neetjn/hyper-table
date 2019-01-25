@@ -7,7 +7,7 @@ import Config from './default.config'
 import { Render, SetPage, Update } from './table'
 
 //@flow
-class Table implements TableCore {
+class Table extends hyperHTML.Component implements TableCore {
   constructor(props: Object) {
     super()
     this.config = Object.assign(props.config || {}, Config)

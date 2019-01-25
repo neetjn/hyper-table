@@ -1,7 +1,7 @@
 import hyperHTML from 'hyperhtml'
 import { TableConfig } from './config.def'
 
-declare interface TableCore extends hyperHTML.Component {
+declare interface TableCore {
 
   config: TableConfig,
   columns: Array<string>,

@@ -1,3 +1,5 @@
+import { EventEnum } from '../events'
+
 export default function() {
   const self = this
 
@@ -17,6 +19,9 @@ export default function() {
   data.forEach((unit, index) => {
     data[index] = unit.sort((a, b) => a[1] > b[1])
   })
+
+  self.events.emit(EventEnum.RENDER)
+
   return self.html`
     <div class="ht-wrapper">
       <div class="ht-pagination">

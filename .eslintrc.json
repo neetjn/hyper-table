@@ -25,6 +25,7 @@
   "globals": {
     "document": true,
     "window": true,
-    "module": true
+    "module": true,
+    "require": true
   }
 }

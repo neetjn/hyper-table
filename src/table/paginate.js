@@ -1,6 +1,11 @@
 import { EventsEnum } from '../events'
 
 // @flow
+/**
+ *
+ * @param {*} opts
+ * @param {*} refresh
+ */
 export default function(opts: Object, refresh: boolean = false) {
   const self = this
 

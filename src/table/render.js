@@ -1,10 +1,14 @@
 import { EventsEnum } from '../events'
 
+// @flow
+/**
+ *
+ */
 export default function() {
   const self = this
 
   if (self.config.showPagination && !self.pagination.page)
-    self.setPage({ page: 1 })
+    self.paginate({ page: 1 })
 
   const columns = self.columns.map((column, index) =>
     Object.assign(column, { index })
@@ -52,14 +56,14 @@ export default function() {
           <thead>
             <tr>
               ${columns.map(
-                column => self.hyperHTML.wire()`<th>${column.Header}</th>`
+                column => self.hyper.wire()`<th>${column.Header}</th>`
               )}
             </tr>
           </thead>
           <tbody>
             ${data.map(unit => {
-              return self.hyperHTML.wire()`<tr>${unit.map(item => {
-                return self.hyperHTML.wire()`<td>${item[0]}</td>`
+              return self.hyper.wire()`<tr>${unit.map(item => {
+                return self.hyper.wire()`<td>${item[0]}</td>`
               })}</tr>`
             })}
           </tbody>

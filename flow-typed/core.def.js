@@ -8,7 +8,8 @@ declare interface TableCore {
   data: Array<mixed>,
   pagination: Pagination,
   events: EventEmitter,
-  html: hyperHTML.Wire,
+  hyper: Object,
+  html: Object,
 
   constructor(props: Object): void,
   paginate(opts: ?Object, refresh: boolean): void,

@@ -1,9 +1,9 @@
+import Paginate from './paginate'
 import Render from './render'
-import SetPage from './page'
 import Update from './update'
 
 export {
+  Paginate,
   Render,
-  SetPage,
   Update,
 }

@@ -1,12 +1,16 @@
-import { EventEnum } from '../events'
+import { EventsEnum } from '../events'
 
 export default function() {
   const self = this
 
+  if (self.config.showPagination && !self.pagination.page)
+    self.setPage({ page: 1 })
+
   const columns = self.columns.map((column, index) =>
     Object.assign(column, { index })
   )
-  const data = self.data.map(vector => {
+
+  const data = (self.config.showPagination ? self.pagination.data : self.data).map(vector => {
     const units = []
     for (var key in vector) {
       units.push([
@@ -20,7 +24,7 @@ export default function() {
     data[index] = unit.sort((a, b) => a[1] > b[1])
   })
 
-  self.events.emit(EventEnum.RENDER)
+  self.events.emit(EventsEnum.RENDER)
 
   return self.html`
     <div class="ht-wrapper">

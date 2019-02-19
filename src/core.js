@@ -5,7 +5,7 @@ import { EventsEnum } from './events'
 import { TableCore } from '../flow-typed/core.def'
 import { Config } from './default.config'
 
-import { Render, SetPage, Update } from './table'
+import { Paginate, Render, Update } from './table'
 
 //@flow
 class Table extends hyperHTML.Component implements TableCore {
@@ -19,14 +19,20 @@ class Table extends hyperHTML.Component implements TableCore {
     this.events = new EventEmitter()
     this.html = hyperHTML.wire(this)
 
+    // # init pagination details
+    this.pagination = {
+      page: 0,
+      data: []
+    }
+
     // # emit init event
     this.events.emit(EventsEnum.INIT)
   }
 }
 
 // # define interface methods
+Table.prototype.paginate = Paginate
 Table.prototype.render = Render
-Table.prototype.setPage = SetPage
 Table.prototype.update = Update
 
 module.exports = Table

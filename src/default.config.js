@@ -11,6 +11,4 @@ const DefaultConfig: TableConfig = {
   showPageJump: true
 }
 
-export default {
-  DefaultConfig
-}
+export { DefaultConfig }

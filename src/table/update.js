@@ -1,8 +1,11 @@
-import { EventEnum } from '../events'
+import { EventsEnum } from '../events'
 
-export default function() {
+// @flow
+export default function(data: Array<mixed>) {
   const self = this
 
-  self.events.emit(EventEnum.UPDATE)
+  self.data = data
+  self.setPage({}, true)
+  self.events.emit(EventsEnum.UPDATE)
   self.render()
 }

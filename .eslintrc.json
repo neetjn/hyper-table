@@ -25,7 +25,6 @@
   "globals": {
     "document": true,
     "window": true,
-    "Promise": true,
     "module": true
   }
 }

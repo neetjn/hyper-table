@@ -5,6 +5,4 @@ const EventsEnum = {
   Error: 'ERROR'
 }
 
-export default {
-  EventsEnum
-}
+export { EventsEnum }

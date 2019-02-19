@@ -12,6 +12,6 @@ declare interface TableCore {
   constructor(props: Object): void,
   render(): void,
   update(): void,
-  setPage(): void
+  setPage(opts: ?Object): void
 
 }

@@ -28,6 +28,10 @@ export default function() {
     data[index] = unit.sort((a, b) => a[1] > b[1])
   })
 
+  console.log(self.data)
+  console.log(self.pagination)
+  console.log(data)
+
   self.events.emit(EventsEnum.RENDER)
 
   return self.html`

@@ -11,7 +11,7 @@ export default function(opts: Object, refresh: boolean = false) {
 
   if (!refresh)
     if (opts.page)
-      self.pagination.data = opts.page
+      self.pagination.page = opts.page
     else {
       if (opts.previousPage)
         self.pagination.page -= 1
@@ -22,7 +22,9 @@ export default function(opts: Object, refresh: boolean = false) {
     }
   if (self.config.showPagination) {
     const pageSize = self.config.pageSize || self.config.defaultPageSize
-    const base = pageSize * self.page - pageSize
+    const base = pageSize * self.pagination.page - pageSize
+    // TODO: left here, undefined
+    console.log(base)
     self.pagination.data = self.data.slice(base, base + pageSize)
   }
 }

@@ -1,4 +1,49 @@
+import { TableCore } from '../../flow-typed/core.def'
 import { EventsEnum } from '../events'
+
+
+// @flow
+/**
+ *
+ * @param {*} table
+ */
+function pagination(table: TableCore) {
+
+  const pageSize = table.config.pageSize || table.config.defaultPageSize
+  const maxPages = Math.ceil(table.data.length / pageSize)
+  const hasMultiplePages = maxPages > 1
+
+  return table.hyper.wire()`
+    <div class="ht-pagination">
+        <ul class="ht-pagination-list">
+          ${ hasMultiplePages ?
+             [...Array(maxPages).keys()].map(p => table.hyper.wire()`
+               <li class="ht-pagination-item">
+                 <button class="ht-pagination-btn">${p + 1}</button>
+               </li>
+             `):
+             null
+          }
+          <!-- <li class="ht-pagination-item">
+            <button class="ht-pagination-btn">First</button>
+          </li> -->
+          ${ table.pagination.page }
+          <li class="ht-pagination-item">
+            <button class="ht-pagination-btn">1</button>
+          </li>
+          <li class="ht-pagination-item">
+            <button class="ht-pagination-btn">2</button>
+          </li>
+          <li class="ht-pagination-item">
+            <button class="ht-pagination-btn">Next</button>
+          </li>
+          <!-- <li class="ht-pagination-item">
+            <button class="ht-pagination-btn">Last</button>
+          </li> -->
+        </ul>
+      </div>
+  `
+}
 
 // @flow
 /**
@@ -36,25 +81,9 @@ export default function() {
 
   return self.html`
     <div class="ht-wrapper">
-      <div class="ht-pagination">
-        <ul class="ht-pagination-list">
-          <!-- <li class="ht-pagination-item">
-            <button class="ht-pagination-btn">First</button>
-          </li> -->
-          <li class="ht-pagination-item">
-            <button class="ht-pagination-btn">1</button>
-          </li>
-          <li class="ht-pagination-item">
-            <button class="ht-pagination-btn">2</button>
-          </li>
-          <li class="ht-pagination-item">
-            <button class="ht-pagination-btn">Next</button>
-          </li>
-          <!-- <li class="ht-pagination-item">
-            <button class="ht-pagination-btn">Last</button>
-          </li> -->
-        </ul>
-      </div>
+      ${self.config.showPagination && self.config.showPaginationTop ?
+        pagination(self) :
+        null }
       <div class="ht-container">
         <table class="ht-table">
           <thead>
@@ -73,6 +102,9 @@ export default function() {
           </tbody>
         </table>
       </div>
+      ${ self.config.showPagination && self.config.showPaginationBottom ?
+         pagination(self) :
+         null }
     </div>
   `
 }

@@ -19,6 +19,12 @@
 
 ### Example
 
+This project provides a generator to define a component instance:
+
+```js
+const Table = hyperTable(hyperHTML)
+```
+
 The **hyper-table** component consumes and expects two props:
 
 * **columns**: Structured list of columns for table, provides header information and other functional details.

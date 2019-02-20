@@ -4,8 +4,8 @@ import { EventsEnum } from '../events'
 
 // @flow
 /**
- *
- * @param {*} table
+ * Generate pagination view using table instance.
+ * @param {TableCore} table - Target table instance.
  */
 function pagination(table: TableCore) {
 
@@ -23,7 +23,7 @@ function pagination(table: TableCore) {
               </li>
               ${[...Array(maxPages).keys()].map(p => table.hyper.wire()`
               <li class="ht-pagination-item">
-                <button class="ht-pagination-btn" onclick="${() => table.paginate({ page: p + 1 })}">${p + 1}</button>
+                <button class="ht-pagination-btn" onclick="${() => table.paginate({ page: p + 1 }, false, true)}">${p + 1}</button>
               </li>
               `)}
               <li class="ht-pagination-item">
@@ -39,7 +39,7 @@ function pagination(table: TableCore) {
 
 // @flow
 /**
- *
+ * hyperHTML interfaced component method for rendering table.
  */
 export default function() {
   const self = this

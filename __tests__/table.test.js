@@ -1,7 +1,8 @@
 import 'jest-dom/extend-expect'
 import hyperHTML from 'hyperhtml'
+import hyperTable from '../src/core'
 
-import { Table } from '../src'
+const Table = hyperTable(hyperHTML)
 
 describe('Table', () => {
   beforeEach(() => {

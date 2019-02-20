@@ -17,7 +17,7 @@ function hyperTable(hyperHTML) {
       super()
 
       // # init scope variables
-      this.config = Object.assign(props.config || {}, DefaultConfig)
+      this.config = Object.assign(DefaultConfig, props.config || {})
       this.columns = props.columns || []
       this.data = props.data || []
       this.events = new EventEmitter()

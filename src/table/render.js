@@ -16,30 +16,22 @@ function pagination(table: TableCore) {
   return table.hyper.wire()`
     <div class="ht-pagination">
         <ul class="ht-pagination-list">
-          ${ hasMultiplePages ?
-             [...Array(maxPages).keys()].map(p => table.hyper.wire()`
-               <li class="ht-pagination-item">
-                 <button class="ht-pagination-btn">${p + 1}</button>
-               </li>
-             `):
-             null
+          ${hasMultiplePages ?
+            table.hyper.wire()`
+              <li class="ht-pagination-item">
+                <button class="ht-pagination-btn">First</button>
+              </li>
+              ${[...Array(maxPages).keys()].map(p => table.hyper.wire()`
+              <li class="ht-pagination-item">
+                <button class="ht-pagination-btn">${p + 1}</button>
+              </li>
+              `)}
+              <li class="ht-pagination-item">
+                <button class="ht-pagination-btn">Last</button>
+              </li>
+            ` :
+            null
           }
-          <!-- <li class="ht-pagination-item">
-            <button class="ht-pagination-btn">First</button>
-          </li> -->
-          ${ table.pagination.page }
-          <li class="ht-pagination-item">
-            <button class="ht-pagination-btn">1</button>
-          </li>
-          <li class="ht-pagination-item">
-            <button class="ht-pagination-btn">2</button>
-          </li>
-          <li class="ht-pagination-item">
-            <button class="ht-pagination-btn">Next</button>
-          </li>
-          <!-- <li class="ht-pagination-item">
-            <button class="ht-pagination-btn">Last</button>
-          </li> -->
         </ul>
       </div>
   `
@@ -73,17 +65,14 @@ export default function() {
     data[index] = unit.sort((a, b) => a[1] > b[1])
   })
 
-  console.log(self.data)
-  console.log(self.pagination)
-  console.log(data)
-
   self.events.emit(EventsEnum.RENDER)
 
   return self.html`
     <div class="ht-wrapper">
       ${self.config.showPagination && self.config.showPaginationTop ?
         pagination(self) :
-        null }
+        null
+      }
       <div class="ht-container">
         <table class="ht-table">
           <thead>
@@ -102,9 +91,10 @@ export default function() {
           </tbody>
         </table>
       </div>
-      ${ self.config.showPagination && self.config.showPaginationBottom ?
-         pagination(self) :
-         null }
+      ${self.config.showPagination && self.config.showPaginationBottom ?
+        pagination(self) :
+        null
+      }
     </div>
   `
 }

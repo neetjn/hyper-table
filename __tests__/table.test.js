@@ -1,7 +1,8 @@
 import 'jest-dom/extend-expect'
-
 import hyperHTML from 'hyperhtml'
-import { Table } from '../src'
+import hyperTable from '../src/core'
+
+const Table = hyperTable(hyperHTML)
 
 describe('Table', () => {
   beforeEach(() => {
@@ -57,5 +58,30 @@ describe('Table', () => {
         expect(data[index][key].toString()).toEqual(cells[jindex].textContent)
       })
     })
+  })
+
+  it('pagination should work', () => {
+    const columns = [{ Header: 'Number', accessor: 'number' }]
+    const data = []
+    const config = {
+      data,
+      showPagination: true,
+      showPaginationTop: false,
+      showPaginationBottom: false,
+      showPageSizeOptions: true,
+      pageSizeOptions: [],
+      defaultPageSize: 20,
+      pageSize: 20,
+      showPageJump: true
+    }
+
+    hyperHTML.bind(document.querySelector('#table'))`
+    ${new Table({
+      columns,
+      config
+    })}
+    `
+
+    expect(document.querySelector('#table > table')).toBeDefined()
   })
 })

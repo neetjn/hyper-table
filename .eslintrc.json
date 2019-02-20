@@ -1,11 +1,18 @@
 {
   "root": true,
   "parser": "babel-eslint",
+  "extends": [
+    "plugin:flowtype/recommended"
+  ],
+  "plugins": [
+    "flowtype"
+  ],
   "rules": {
     "object-curly-spacing": ["error", "always"],
     "no-multiple-empty-lines": ["error", { "max": 2, "maxBOF": 1 }],
     "semi": ["error", "never"],
     "no-unused-vars": ["error"],
+    "no-undef": ["error"],
     "space-before-blocks": ["error", "always"],
     "quotes": ["error", "single"],
     "prefer-const": ["error", {
@@ -17,6 +24,8 @@
   },
   "globals": {
     "document": true,
-    "window": true
+    "window": true,
+    "module": true,
+    "require": true
   }
 }

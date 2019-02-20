@@ -1,12 +1,12 @@
 {
   "name": "@neetjn/hyper-table",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "ReactTable port for HyperMTML.",
-  "main": "index.js",
+  "main": "dist/hyper-table.js",
   "scripts": {
-    "lint": "npx eslint src/**.js",
+    "lint": "npx eslint src/**.js flow-typed/**.js",
     "pretty": "npx prettier-eslint --write src/**.js && npx prettier-eslint --write __tests__/**.js",
-    "build": "npm run lint && npm run pretty && node_modules/.bin/parcel build src/index.js -o hyper-table.js",
+    "build": "npm run lint && npm run pretty && node_modules/.bin/parcel build src/core.js -o hyper-table.js --global hyperTable",
     "test": "npm run lint && node_modules/.bin/jest --coverage"
   },
   "repository": {
@@ -28,11 +28,14 @@
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.54",
     "@babel/preset-env": "^7.0.0-beta.54",
+    "@babel/preset-flow": "^7.0.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.4.0",
     "babel-loader": "^8.0.4",
     "eslint": "^5.10.0",
+    "eslint-plugin-flowtype": "^3.2.1",
+    "flow": "^0.2.3",
     "hyperhtml": "^2.14.0",
     "jest": "^23.6.0",
     "jest-dom": "^3.0.0",
@@ -46,5 +49,6 @@
     "coverageDirectory": "./coverage/",
     "collectCoverage": true,
     "verbose": true
-  }
+  },
+  "dependencies": {}
 }

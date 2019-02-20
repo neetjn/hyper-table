@@ -1,0 +1,6 @@
+[include]
+./src/**.js
+./flow-typed/**.js
+
+[ignore]
+.*/dist/.*

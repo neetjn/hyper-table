@@ -7,8 +7,8 @@ import { DefaultConfig } from './default.config'
 import { Paginate, Render, Update } from './table'
 
 /**
- *
- * @param {*} hyperHTML
+ * hyperTable component instance generator.
+ * @param {hyperHTML} hyperHTML - hyperHTML instance to target for components and wiring.
  */
 function hyperTable(hyperHTML) {
   // @flow

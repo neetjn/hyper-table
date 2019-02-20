@@ -12,7 +12,7 @@ declare interface TableCore {
   html: Object,
 
   constructor(props: Object): void,
-  paginate(opts: ?Object, refresh: boolean): void,
+  paginate(opts: ?Object, refresh: boolean, render: boolean): void,
   render(): void,
   update(data: Array<mixed>): void,
 

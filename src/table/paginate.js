@@ -28,6 +28,8 @@ export default function(opts: Object, refresh: boolean = false, render: boolean 
     self.pagination.data = self.data.slice(base, base + pageSize)
   }
 
+  self.events.emit(EventsEnum.Paginate)
+
   if (render)
     self.render()
 }

@@ -13,21 +13,22 @@ function pagination(table: TableCore) {
   const maxPages = Math.ceil(table.data.length / pageSize)
   const hasMultiplePages = maxPages > 1
 
+  // TODO: left here, figure out how to re-render on paginate -- render calls paginate?
   return table.hyper.wire()`
     <div class="ht-pagination">
         <ul class="ht-pagination-list">
           ${hasMultiplePages ?
             table.hyper.wire()`
               <li class="ht-pagination-item">
-                <button class="ht-pagination-btn">First</button>
+                <button class="ht-pagination-btn" onclick="${() => table.paginate({ page: 1 })}">First</button>
               </li>
               ${[...Array(maxPages).keys()].map(p => table.hyper.wire()`
               <li class="ht-pagination-item">
-                <button class="ht-pagination-btn">${p + 1}</button>
+                <button class="ht-pagination-btn" onclick="">${p + 1}</button>
               </li>
               `)}
               <li class="ht-pagination-item">
-                <button class="ht-pagination-btn">Last</button>
+                <button class="ht-pagination-btn" onclick="${() => table.paginate({ page: maxPages })}">Last</button>
               </li>
             ` :
             null

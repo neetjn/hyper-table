@@ -1,8 +1,8 @@
 {
   "name": "@neetjn/hyper-table",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "ReactTable port for HyperMTML.",
-  "main": "index.js",
+  "main": "dist/hyper-table.js",
   "scripts": {
     "lint": "npx eslint src/**.js flow-typed/**.js",
     "pretty": "npx prettier-eslint --write src/**.js && npx prettier-eslint --write __tests__/**.js",

@@ -77,13 +77,13 @@ bower install hyper-table
 To install via NPM:
 
 ```sh
-npm install hyper-table
+npm install @neetjn/hyper-table
 ```
 
 For a quick start using jsdelivr:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/hyper-table/dist/hyper-table.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/hyper-table/dist/hyper-table.js"></script>
 ```
 
 ### Contributors

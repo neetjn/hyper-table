@@ -50,5 +50,7 @@
     "collectCoverage": true,
     "verbose": true
   },
-  "dependencies": {}
+  "publishConfig": {
+    "access": "public"
+  }
 }
